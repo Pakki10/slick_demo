@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kshetra — Your AI Chief of Staff</title>
-  <meta name="description" content="Kshetra — an AI-powered executive assistant that handles your calls, emails, documents, trades, and reminders.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,9 +11,7 @@
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    tailwind.config = {
-      theme: { extend: { fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] } } }
-    }
+    tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] } } } }
   </script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -23,357 +20,278 @@
 
   <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-white text-neutral-900 font-sans overflow-x-hidden">
+<body class="bg-white text-neutral-900 font-sans">
 
-  <!-- NAV -->
-  <nav class="fixed top-0 left-0 right-0 z-50 px-6 py-4">
-    <div class="max-w-7xl mx-auto flex items-center justify-between">
-      <div class="flex items-center gap-2">
-        <span class="text-xl font-bold gradient-text">क्षेत्र</span>
-        <span class="text-sm font-semibold text-neutral-800 tracking-wide">Kshetra</span>
-      </div>
-      <a href="https://general-admin-ruby.vercel.app/onboarding" target="_blank" class="nav-btn px-5 py-2 rounded-full text-sm font-medium">
-        Get Started
-      </a>
-    </div>
-  </nav>
+  <!-- Fixed viewport — everything lives here -->
+  <div id="viewport" class="fixed inset-0 overflow-hidden">
 
-  <!-- HERO -->
-  <div id="hero" class="relative min-h-screen flex items-center justify-center px-6 pt-16">
-    <div class="hero-bg"></div>
-    <div class="text-center max-w-5xl mx-auto relative z-10">
-      <div class="hero-tag inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-neutral-200 bg-white/80 backdrop-blur mb-8 text-xs font-medium text-neutral-500 uppercase tracking-widest">
-        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-        Now Live
-      </div>
-      <h1 class="hero-heading text-[clamp(2.5rem,7vw,6.5rem)] font-bold leading-[1.05] tracking-tight mb-8">
-        <span class="hero-word">Your</span>
-        <span class="hero-word">AI</span>
-        <span class="hero-word gradient-text">Chief</span>
-        <span class="hero-word gradient-text">of</span>
-        <span class="hero-word gradient-text">Staff.</span>
-      </h1>
-      <p class="hero-sub text-lg md:text-xl text-neutral-500 max-w-xl mx-auto mb-10 leading-relaxed">
-        Calls, emails, documents, trades, reminders — handled. You focus on what matters.
-      </p>
-      <div class="hero-cta flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="https://general-admin-ruby.vercel.app/onboarding" target="_blank" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-neutral-900 text-white font-semibold hover:bg-neutral-800 transition-all shadow-xl shadow-neutral-900/20">
-          Start for free
-          <i data-lucide="arrow-right" class="w-4 h-4"></i>
-        </a>
-        <a href="#problem" class="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-neutral-200 text-neutral-600 font-semibold hover:border-neutral-400 transition-all">
-          See how it works
-          <i data-lucide="chevron-down" class="w-4 h-4"></i>
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <!-- PROBLEM -->
-  <div id="problem" class="px-6 py-24 md:py-32">
-    <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-10">
-        <span class="problem-line block">You spend <span class="text-indigo-500 stat-number" data-target="4.1">0</span><span class="text-indigo-500">hrs</span> on email.</span>
-        <span class="problem-line block mt-3"><span class="text-cyan-500 stat-number" data-target="23">0</span><span class="text-cyan-500">%</span> of your work is repetitive.</span>
-        <span class="problem-line block mt-3"><span class="text-amber-500 stat-number" data-target="67">0</span><span class="text-amber-500">%</span> of meetings need no human.</span>
-      </h2>
-      <p class="problem-answer text-2xl md:text-4xl font-light text-neutral-400">
-        What if something <span class="text-neutral-900 font-semibold">handled it all</span>?
-      </p>
-    </div>
-  </div>
-
-  <!-- DEMO -->
-  <div id="demo" class="px-6 py-20 md:py-28">
-    <div class="max-w-5xl mx-auto">
-      <div class="text-center mb-12">
-        <p class="demo-label text-sm font-semibold text-indigo-500 uppercase tracking-widest mb-3">Your morning with Kshetra</p>
-        <h2 class="demo-heading text-3xl md:text-5xl font-bold text-neutral-900">See it in action.</h2>
-      </div>
-
-      <div class="flex flex-col lg:flex-row items-center lg:items-start justify-center gap-8 lg:gap-12">
-        <!-- Browser -->
-        <div class="demo-browser w-full max-w-2xl">
-          <div class="flex items-center gap-2 px-4 py-3 bg-neutral-100 rounded-t-2xl border border-neutral-200 border-b-0">
-            <div class="flex gap-1.5">
-              <div class="w-3 h-3 rounded-full bg-red-400"></div>
-              <div class="w-3 h-3 rounded-full bg-amber-400"></div>
-              <div class="w-3 h-3 rounded-full bg-emerald-400"></div>
-            </div>
-            <div class="flex-1 mx-4">
-              <div class="bg-white rounded-lg px-4 py-1.5 text-xs text-neutral-400 text-center max-w-xs mx-auto border border-neutral-200">kshetra.ai/dashboard</div>
-            </div>
-          </div>
-          <div class="bg-white border border-neutral-200 rounded-b-2xl overflow-hidden relative shadow-xl shadow-neutral-900/5" style="min-height: 380px;">
-            <!-- Screen 1: Login -->
-            <div class="screen screen-1 absolute inset-0 flex flex-col items-center justify-center p-8">
-              <div class="h-14 px-5 rounded-2xl bg-indigo-50 border border-indigo-100 flex items-center justify-center mb-5">
-                <span class="text-xl font-bold gradient-text">क्षेत्र</span>
-              </div>
-              <h3 class="text-xl font-bold text-neutral-900 mb-2">Welcome to Kshetra</h3>
-              <p class="text-neutral-500 text-sm mb-6">Your AI-powered executive assistant</p>
-              <button class="flex items-center gap-3 px-5 py-2.5 rounded-xl bg-neutral-900 text-white text-sm font-medium">
-                <svg class="w-4 h-4" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-                Continue with Google
-              </button>
-            </div>
-            <!-- Screen 2: Greeting -->
-            <div class="screen screen-2 absolute inset-0 flex flex-col items-center justify-center p-8 opacity-0">
-              <p class="text-neutral-400 text-xs mb-2">Saturday, March 14, 2026</p>
-              <h3 class="text-2xl md:text-3xl font-bold text-neutral-900">Good morning, <span class="gradient-text">Sneha</span>.</h3>
-              <p class="text-neutral-500 text-sm mt-2">What shall we tackle today?</p>
-            </div>
-            <!-- Screen 3: Briefing -->
-            <div class="screen screen-3 absolute inset-0 flex flex-col p-6 md:p-8 opacity-0">
-              <div class="flex items-center gap-2 mb-5">
-                <div class="w-7 h-7 rounded-lg bg-indigo-50 flex items-center justify-center">
-                  <span class="text-[10px] font-bold gradient-text">क्षे</span>
-                </div>
-                <span class="text-xs text-neutral-500">Kshetra</span>
-              </div>
-              <div class="space-y-3">
-                <div class="chat-msg bg-neutral-50 rounded-2xl rounded-tl-md px-4 py-3 opacity-0">
-                  <p class="text-neutral-700 text-sm">Good morning! Here's your daily briefing:</p>
-                </div>
-                <div class="chat-msg bg-neutral-50 rounded-2xl rounded-tl-md px-4 py-3 opacity-0">
-                  <div class="space-y-2.5">
-                    <div class="flex items-start gap-2.5">
-                      <i data-lucide="mail" class="w-3.5 h-3.5 text-blue-500 mt-0.5 flex-shrink-0"></i>
-                      <p class="text-neutral-600 text-xs"><span class="text-neutral-900 font-medium">3 unread emails</span> — 1 from your accountant needs a reply by noon</p>
-                    </div>
-                    <div class="flex items-start gap-2.5">
-                      <i data-lucide="file-text" class="w-3.5 h-3.5 text-amber-500 mt-0.5 flex-shrink-0"></i>
-                      <p class="text-neutral-600 text-xs"><span class="text-neutral-900 font-medium">1 document expiring</span> — car insurance renewal due tomorrow</p>
-                    </div>
-                    <div class="flex items-start gap-2.5">
-                      <i data-lucide="trending-up" class="w-3.5 h-3.5 text-emerald-500 mt-0.5 flex-shrink-0"></i>
-                      <p class="text-neutral-600 text-xs"><span class="text-neutral-900 font-medium">NIFTY up 2.3%</span> — RELIANCE position gained ₹4,200</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="chat-msg bg-neutral-50 rounded-2xl rounded-tl-md px-4 py-3 opacity-0">
-                  <p class="text-neutral-700 text-sm">Shall I draft a reply to your accountant?</p>
-                </div>
-              </div>
-            </div>
-          </div>
+    <!-- NAV -->
+    <nav class="absolute top-0 left-0 right-0 z-50 px-6 py-4">
+      <div class="max-w-7xl mx-auto flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <span class="text-xl font-bold gradient-text">क्षेत्र</span>
+          <span class="text-sm font-semibold text-neutral-800 tracking-wide">Kshetra</span>
         </div>
+        <a href="https://general-admin-ruby.vercel.app/onboarding" target="_blank" class="px-5 py-2 rounded-full text-sm font-medium bg-neutral-900 text-white hover:bg-neutral-700 transition-colors">
+          Get Started
+        </a>
+      </div>
+    </nav>
 
-        <!-- Phone -->
-        <div class="demo-phone flex-shrink-0 hidden lg:block">
-          <div class="w-[260px] bg-neutral-900 rounded-[2.5rem] p-[10px] shadow-2xl shadow-neutral-900/30">
-            <div class="bg-neutral-950 rounded-[2rem] overflow-hidden relative" style="min-height: 500px;">
-              <div class="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-6 bg-neutral-900 rounded-b-2xl z-20"></div>
-              <div class="flex items-center justify-between px-6 pt-3 pb-1 text-[10px] text-neutral-500 relative z-10">
-                <span>9:41</span>
-                <div class="flex items-center gap-1">
-                  <i data-lucide="signal" class="w-3 h-3"></i>
-                  <i data-lucide="wifi" class="w-3 h-3"></i>
-                  <i data-lucide="battery-full" class="w-3 h-3"></i>
-                </div>
+    <!-- SLIDE 1: HERO -->
+    <div class="slide slide-hero absolute inset-0 flex items-center justify-center px-6">
+      <div class="hero-bg"></div>
+      <div class="text-center max-w-5xl mx-auto relative z-10">
+        <div class="hero-tag inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-neutral-200 bg-white/80 backdrop-blur mb-8 text-xs font-medium text-neutral-500 uppercase tracking-widest">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          Now Live
+        </div>
+        <h1 class="text-[clamp(2.5rem,7vw,6.5rem)] font-bold leading-[1.05] tracking-tight mb-8">
+          <span class="hero-word">Your</span>
+          <span class="hero-word">AI</span>
+          <span class="hero-word gradient-text">Chief</span>
+          <span class="hero-word gradient-text">of</span>
+          <span class="hero-word gradient-text">Staff.</span>
+        </h1>
+        <p class="hero-sub text-lg md:text-xl text-neutral-500 max-w-xl mx-auto mb-10 leading-relaxed">
+          Calls, emails, documents, trades, reminders — handled.<br>You focus on what matters.
+        </p>
+        <div class="hero-cta flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="https://general-admin-ruby.vercel.app/onboarding" target="_blank" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-neutral-900 text-white font-semibold hover:bg-neutral-800 transition-all shadow-xl shadow-neutral-900/20">
+            Start for free <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+        <p class="text-neutral-400 text-xs mt-6">Scroll to explore</p>
+      </div>
+    </div>
+
+    <!-- SLIDE 2: PROBLEM -->
+    <div class="slide slide-problem absolute inset-0 flex items-center justify-center px-6 opacity-0">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-10">
+          <span class="problem-line block">You spend <span class="text-indigo-500 stat-number" data-target="4.1">0</span><span class="text-indigo-500">hrs</span> on email.</span>
+          <span class="problem-line block mt-3"><span class="text-cyan-500 stat-number" data-target="23">0</span><span class="text-cyan-500">%</span> of work is repetitive.</span>
+          <span class="problem-line block mt-3"><span class="text-amber-500 stat-number" data-target="67">0</span><span class="text-amber-500">%</span> of meetings need no human.</span>
+        </h2>
+        <p class="text-xl md:text-3xl font-light text-neutral-400">
+          What if something <span class="text-neutral-900 font-semibold">handled it all</span>?
+        </p>
+      </div>
+    </div>
+
+    <!-- SLIDE 3: DEMO -->
+    <div class="slide slide-demo absolute inset-0 flex items-center justify-center px-6 opacity-0">
+      <div class="max-w-5xl w-full mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-sm font-semibold text-indigo-500 uppercase tracking-widest mb-2">Your morning with Kshetra</p>
+          <h2 class="text-2xl md:text-4xl font-bold">See it in action.</h2>
+        </div>
+        <div class="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-10">
+          <!-- Browser -->
+          <div class="demo-browser w-full max-w-xl">
+            <div class="flex items-center gap-2 px-4 py-2.5 bg-neutral-100 rounded-t-xl border border-neutral-200 border-b-0">
+              <div class="flex gap-1.5">
+                <div class="w-2.5 h-2.5 rounded-full bg-red-400"></div>
+                <div class="w-2.5 h-2.5 rounded-full bg-amber-400"></div>
+                <div class="w-2.5 h-2.5 rounded-full bg-emerald-400"></div>
               </div>
-              <div class="p-4 pt-3">
+              <div class="flex-1 mx-3">
+                <div class="bg-white rounded-md px-3 py-1 text-[11px] text-neutral-400 text-center max-w-[200px] mx-auto border border-neutral-200">kshetra.ai</div>
+              </div>
+            </div>
+            <div class="bg-white border border-neutral-200 rounded-b-xl overflow-hidden relative shadow-lg" style="min-height:320px;">
+              <div class="screen screen-1 absolute inset-0 flex flex-col items-center justify-center p-6">
+                <div class="h-12 px-4 rounded-xl bg-indigo-50 border border-indigo-100 flex items-center justify-center mb-4">
+                  <span class="text-lg font-bold gradient-text">क्षेत्र</span>
+                </div>
+                <h3 class="text-lg font-bold mb-1">Welcome to Kshetra</h3>
+                <p class="text-neutral-500 text-xs mb-5">Your AI-powered executive assistant</p>
+                <button class="flex items-center gap-2 px-4 py-2 rounded-lg bg-neutral-900 text-white text-xs font-medium">
+                  <svg class="w-3.5 h-3.5" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                  Continue with Google
+                </button>
+              </div>
+              <div class="screen screen-2 absolute inset-0 flex flex-col items-center justify-center p-6 opacity-0">
+                <p class="text-neutral-400 text-[11px] mb-1">Saturday, March 14, 2026</p>
+                <h3 class="text-xl md:text-2xl font-bold">Good morning, <span class="gradient-text">Sneha</span>.</h3>
+                <p class="text-neutral-500 text-xs mt-1">What shall we tackle today?</p>
+              </div>
+              <div class="screen screen-3 absolute inset-0 flex flex-col p-5 opacity-0">
                 <div class="flex items-center gap-2 mb-4">
-                  <div class="w-6 h-6 rounded-md bg-indigo-500/20 flex items-center justify-center">
-                    <span class="text-[8px] font-bold gradient-text">क्षे</span>
-                  </div>
-                  <span class="text-[11px] font-medium text-neutral-300">Kshetra</span>
-                  <span class="text-[9px] text-neutral-600 ml-auto">now</span>
+                  <div class="w-6 h-6 rounded-md bg-indigo-50 flex items-center justify-center"><span class="text-[8px] font-bold gradient-text">क्षे</span></div>
+                  <span class="text-[11px] text-neutral-500">Kshetra</span>
                 </div>
-                <div class="space-y-2.5">
-                  <div class="mobile-notif bg-white/5 border border-white/10 rounded-xl p-3">
-                    <div class="flex items-center gap-1.5 mb-1">
-                      <i data-lucide="bell-ring" class="w-3 h-3 text-orange-400"></i>
-                      <span class="text-[10px] font-semibold text-orange-400">ALERT</span>
+                <div class="space-y-2">
+                  <div class="chat-msg bg-neutral-50 rounded-xl rounded-tl-sm px-3 py-2 opacity-0"><p class="text-neutral-700 text-xs">Good morning! Here's your briefing:</p></div>
+                  <div class="chat-msg bg-neutral-50 rounded-xl rounded-tl-sm px-3 py-2 opacity-0">
+                    <div class="space-y-1.5">
+                      <div class="flex items-start gap-2"><i data-lucide="mail" class="w-3 h-3 text-blue-500 mt-0.5 flex-shrink-0"></i><p class="text-neutral-600 text-[11px]"><span class="text-neutral-900 font-medium">3 emails</span> — accountant needs reply by noon</p></div>
+                      <div class="flex items-start gap-2"><i data-lucide="file-text" class="w-3 h-3 text-amber-500 mt-0.5 flex-shrink-0"></i><p class="text-neutral-600 text-[11px]"><span class="text-neutral-900 font-medium">1 doc expiring</span> — car insurance due tomorrow</p></div>
+                      <div class="flex items-start gap-2"><i data-lucide="trending-up" class="w-3 h-3 text-emerald-500 mt-0.5 flex-shrink-0"></i><p class="text-neutral-600 text-[11px]"><span class="text-neutral-900 font-medium">NIFTY +2.3%</span> — RELIANCE gained ₹4,200</p></div>
                     </div>
-                    <p class="text-neutral-400 text-[11px] leading-relaxed">Car insurance expires tomorrow. Should I renew?</p>
                   </div>
-                  <div class="mobile-notif bg-white/5 border border-white/10 rounded-xl p-3">
-                    <div class="flex items-center gap-1.5 mb-1">
-                      <i data-lucide="trending-up" class="w-3 h-3 text-emerald-400"></i>
-                      <span class="text-[10px] font-semibold text-emerald-400">TRADE</span>
-                    </div>
-                    <p class="text-neutral-400 text-[11px] leading-relaxed">RELIANCE hit ₹2,850 target. Book ₹4,200 profit?</p>
+                  <div class="chat-msg bg-neutral-50 rounded-xl rounded-tl-sm px-3 py-2 opacity-0"><p class="text-neutral-700 text-xs">Shall I draft a reply to your accountant?</p></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Phone -->
+          <div class="demo-phone flex-shrink-0 hidden lg:block">
+            <div class="w-[220px] bg-neutral-900 rounded-[2rem] p-2 shadow-2xl shadow-neutral-900/30">
+              <div class="bg-neutral-950 rounded-[1.6rem] overflow-hidden relative" style="min-height:420px;">
+                <div class="absolute top-0 left-1/2 -translate-x-1/2 w-20 h-5 bg-neutral-900 rounded-b-xl z-20"></div>
+                <div class="flex items-center justify-between px-5 pt-2.5 pb-1 text-[9px] text-neutral-500 relative z-10"><span>9:41</span><div class="flex items-center gap-1"><i data-lucide="signal" class="w-2.5 h-2.5"></i><i data-lucide="wifi" class="w-2.5 h-2.5"></i><i data-lucide="battery-full" class="w-2.5 h-2.5"></i></div></div>
+                <div class="p-3 pt-2">
+                  <div class="flex items-center gap-1.5 mb-3">
+                    <div class="w-5 h-5 rounded bg-indigo-500/20 flex items-center justify-center"><span class="text-[7px] font-bold gradient-text">क्षे</span></div>
+                    <span class="text-[10px] font-medium text-neutral-300">Kshetra</span>
+                    <span class="text-[8px] text-neutral-600 ml-auto">now</span>
                   </div>
-                  <div class="mobile-notif bg-white/5 border border-white/10 rounded-xl p-3">
-                    <div class="flex items-center gap-1.5 mb-1">
-                      <i data-lucide="phone-incoming" class="w-3 h-3 text-blue-400"></i>
-                      <span class="text-[10px] font-semibold text-blue-400">CALL</span>
+                  <div class="space-y-2">
+                    <div class="mobile-notif bg-white/5 border border-white/10 rounded-lg p-2.5">
+                      <div class="flex items-center gap-1 mb-0.5"><i data-lucide="bell-ring" class="w-2.5 h-2.5 text-orange-400"></i><span class="text-[9px] font-semibold text-orange-400">ALERT</span></div>
+                      <p class="text-neutral-400 text-[10px] leading-relaxed">Car insurance expires tomorrow.</p>
                     </div>
-                    <p class="text-neutral-400 text-[11px] leading-relaxed">Missed call from Rahul about project deadline.</p>
-                  </div>
-                  <div class="mobile-notif bg-white/5 border border-white/10 rounded-xl p-3">
-                    <div class="flex items-center gap-1.5 mb-1">
-                      <i data-lucide="calendar" class="w-3 h-3 text-purple-400"></i>
-                      <span class="text-[10px] font-semibold text-purple-400">REMINDER</span>
+                    <div class="mobile-notif bg-white/5 border border-white/10 rounded-lg p-2.5">
+                      <div class="flex items-center gap-1 mb-0.5"><i data-lucide="trending-up" class="w-2.5 h-2.5 text-emerald-400"></i><span class="text-[9px] font-semibold text-emerald-400">TRADE</span></div>
+                      <p class="text-neutral-400 text-[10px] leading-relaxed">RELIANCE hit target. Book ₹4,200?</p>
                     </div>
-                    <p class="text-neutral-400 text-[11px] leading-relaxed">Team standup in 15 min. Action items ready.</p>
+                    <div class="mobile-notif bg-white/5 border border-white/10 rounded-lg p-2.5">
+                      <div class="flex items-center gap-1 mb-0.5"><i data-lucide="phone-incoming" class="w-2.5 h-2.5 text-blue-400"></i><span class="text-[9px] font-semibold text-blue-400">CALL</span></div>
+                      <p class="text-neutral-400 text-[10px] leading-relaxed">Missed call from Rahul.</p>
+                    </div>
+                    <div class="mobile-notif bg-white/5 border border-white/10 rounded-lg p-2.5">
+                      <div class="flex items-center gap-1 mb-0.5"><i data-lucide="calendar" class="w-2.5 h-2.5 text-purple-400"></i><span class="text-[9px] font-semibold text-purple-400">REMINDER</span></div>
+                      <p class="text-neutral-400 text-[10px] leading-relaxed">Standup in 15 min.</p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <p class="text-neutral-400 text-[11px] text-center mt-3">Real-time alerts on your phone</p>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- SKILLS -->
-  <div id="skills" class="px-6 py-20 md:py-28">
-    <div class="max-w-5xl mx-auto">
-      <div class="text-center mb-14">
-        <p class="text-sm font-semibold text-indigo-500 uppercase tracking-widest mb-3">Capabilities</p>
-        <h2 class="skills-heading text-4xl md:text-6xl font-bold text-neutral-900">
-          One brain.<br><span class="gradient-text">Infinite skills.</span>
+    <!-- SLIDE 4: SKILLS -->
+    <div class="slide slide-skills absolute inset-0 flex items-center justify-center px-6 py-16 opacity-0 overflow-y-auto">
+      <div class="max-w-5xl w-full mx-auto">
+        <div class="text-center mb-10">
+          <p class="text-sm font-semibold text-indigo-500 uppercase tracking-widest mb-2">Capabilities</p>
+          <h2 class="text-3xl md:text-5xl font-bold">One brain. <span class="gradient-text">Infinite skills.</span></h2>
+        </div>
+        <div class="skills-grid grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div class="skill-card bg-neutral-50 border border-neutral-200 rounded-xl p-4 flex items-start gap-3">
+            <div class="w-9 h-9 rounded-lg bg-emerald-50 border border-emerald-100 flex items-center justify-center flex-shrink-0"><i data-lucide="phone" class="w-4 h-4 text-emerald-600"></i></div>
+            <div><h3 class="text-sm font-semibold mb-0.5">Phone & Voice</h3><p class="text-neutral-500 text-xs leading-relaxed">Takes calls, makes calls, rings you with alerts.</p></div>
+          </div>
+          <div class="skill-card bg-neutral-50 border border-neutral-200 rounded-xl p-4 flex items-start gap-3">
+            <div class="w-9 h-9 rounded-lg bg-blue-50 border border-blue-100 flex items-center justify-center flex-shrink-0"><i data-lucide="mail" class="w-4 h-4 text-blue-600"></i></div>
+            <div><h3 class="text-sm font-semibold mb-0.5">Email Management</h3><p class="text-neutral-500 text-xs leading-relaxed">Reads, categorizes, drafts, sends on your behalf.</p></div>
+          </div>
+          <div class="skill-card bg-neutral-50 border border-neutral-200 rounded-xl p-4 flex items-start gap-3">
+            <div class="w-9 h-9 rounded-lg bg-indigo-50 border border-indigo-100 flex items-center justify-center flex-shrink-0"><i data-lucide="file-text" class="w-4 h-4 text-indigo-600"></i></div>
+            <div><h3 class="text-sm font-semibold mb-0.5">Document Intelligence</h3><p class="text-neutral-500 text-xs leading-relaxed">Upload, search, summarize. RAG-powered retrieval.</p></div>
+          </div>
+          <div class="skill-card bg-neutral-50 border border-neutral-200 rounded-xl p-4 flex items-start gap-3">
+            <div class="w-9 h-9 rounded-lg bg-amber-50 border border-amber-100 flex items-center justify-center flex-shrink-0"><i data-lucide="trending-up" class="w-4 h-4 text-amber-600"></i></div>
+            <div><h3 class="text-sm font-semibold mb-0.5">Trading Integration</h3><p class="text-neutral-500 text-xs leading-relaxed">Zerodha, any platform. Strategies, alerts, execution.</p></div>
+          </div>
+          <div class="skill-card bg-neutral-50 border border-neutral-200 rounded-xl p-4 flex items-start gap-3">
+            <div class="w-9 h-9 rounded-lg bg-purple-50 border border-purple-100 flex items-center justify-center flex-shrink-0"><i data-lucide="presentation" class="w-4 h-4 text-purple-600"></i></div>
+            <div><h3 class="text-sm font-semibold mb-0.5">Presentations & Sheets</h3><p class="text-neutral-500 text-xs leading-relaxed">Generate decks, manage spreadsheets, export PDFs.</p></div>
+          </div>
+          <div class="skill-card bg-neutral-50 border border-neutral-200 rounded-xl p-4 flex items-start gap-3">
+            <div class="w-9 h-9 rounded-lg bg-cyan-50 border border-cyan-100 flex items-center justify-center flex-shrink-0"><i data-lucide="message-circle" class="w-4 h-4 text-cyan-600"></i></div>
+            <div><h3 class="text-sm font-semibold mb-0.5">Messaging</h3><p class="text-neutral-500 text-xs leading-relaxed">Telegram, Slack, WhatsApp — reach it anywhere.</p></div>
+          </div>
+          <div class="skill-card bg-neutral-50 border border-neutral-200 rounded-xl p-4 flex items-start gap-3">
+            <div class="w-9 h-9 rounded-lg bg-orange-50 border border-orange-100 flex items-center justify-center flex-shrink-0"><i data-lucide="bell-ring" class="w-4 h-4 text-orange-600"></i></div>
+            <div><h3 class="text-sm font-semibold mb-0.5">Proactive Alerts</h3><p class="text-neutral-500 text-xs leading-relaxed">It tells YOU first — expiring docs, trades, meetings.</p></div>
+          </div>
+          <div class="skill-card bg-neutral-50 border border-neutral-200 rounded-xl p-4 flex items-start gap-3">
+            <div class="w-9 h-9 rounded-lg bg-teal-50 border border-teal-100 flex items-center justify-center flex-shrink-0"><i data-lucide="calendar" class="w-4 h-4 text-teal-600"></i></div>
+            <div><h3 class="text-sm font-semibold mb-0.5">Calendar & Reminders</h3><p class="text-neutral-500 text-xs leading-relaxed">Daily summaries, smart scheduling, never miss a beat.</p></div>
+          </div>
+          <div class="skill-card bg-neutral-50 border border-neutral-200 rounded-xl p-4 flex items-start gap-3">
+            <div class="w-9 h-9 rounded-lg bg-sky-50 border border-sky-100 flex items-center justify-center flex-shrink-0"><i data-lucide="globe" class="w-4 h-4 text-sky-600"></i></div>
+            <div><h3 class="text-sm font-semibold mb-0.5">Web Research</h3><p class="text-neutral-500 text-xs leading-relaxed">Real-time search. Answers, not 10 blue links.</p></div>
+          </div>
+          <div class="skill-card bg-gradient-to-br from-indigo-50 to-cyan-50 border border-indigo-100 rounded-xl p-4 flex items-start gap-3">
+            <div class="w-9 h-9 rounded-lg bg-white border border-indigo-100 flex items-center justify-center flex-shrink-0"><i data-lucide="puzzle" class="w-4 h-4 text-indigo-600"></i></div>
+            <div><h3 class="text-sm font-semibold mb-0.5">Extensible via MCP</h3><p class="text-neutral-500 text-xs leading-relaxed">Add any skill. Infinite possibilities.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 5: TWO-WAY -->
+    <div class="slide slide-twoway absolute inset-0 flex items-center justify-center px-6 opacity-0">
+      <div class="max-w-4xl w-full mx-auto">
+        <div class="text-center mb-10">
+          <h2 class="text-3xl md:text-5xl font-bold mb-2">It works <span class="gradient-text">both ways</span>.</h2>
+          <p class="text-neutral-500">You command it. It alerts you.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <h3 class="text-xs font-semibold text-indigo-500 uppercase tracking-widest mb-4">You tell it</h3>
+            <div class="space-y-2.5">
+              <div class="cmd-card bg-white border border-neutral-200 rounded-lg p-3 flex items-center gap-3 shadow-sm"><div class="w-7 h-7 rounded-md bg-blue-50 flex items-center justify-center flex-shrink-0"><i data-lucide="plane" class="w-3.5 h-3.5 text-blue-500"></i></div><p class="text-neutral-600 text-sm">"Book a flight to Mumbai"</p></div>
+              <div class="cmd-card bg-white border border-neutral-200 rounded-lg p-3 flex items-center gap-3 shadow-sm"><div class="w-7 h-7 rounded-md bg-emerald-50 flex items-center justify-center flex-shrink-0"><i data-lucide="mail" class="w-3.5 h-3.5 text-emerald-500"></i></div><p class="text-neutral-600 text-sm">"Summarize today's emails"</p></div>
+              <div class="cmd-card bg-white border border-neutral-200 rounded-lg p-3 flex items-center gap-3 shadow-sm"><div class="w-7 h-7 rounded-md bg-amber-50 flex items-center justify-center flex-shrink-0"><i data-lucide="trending-up" class="w-3.5 h-3.5 text-amber-500"></i></div><p class="text-neutral-600 text-sm">"Buy 50 shares of RELIANCE"</p></div>
+              <div class="cmd-card bg-white border border-neutral-200 rounded-lg p-3 flex items-center gap-3 shadow-sm"><div class="w-7 h-7 rounded-md bg-purple-50 flex items-center justify-center flex-shrink-0"><i data-lucide="phone" class="w-3.5 h-3.5 text-purple-500"></i></div><p class="text-neutral-600 text-sm">"Call Rahul — order is ready"</p></div>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-xs font-semibold text-cyan-500 uppercase tracking-widest mb-4">It tells you</h3>
+            <div class="space-y-2.5">
+              <div class="alert-card bg-white border border-neutral-200 rounded-lg p-3 flex items-center gap-3 shadow-sm"><div class="w-7 h-7 rounded-md bg-amber-50 flex items-center justify-center flex-shrink-0"><i data-lucide="alert-triangle" class="w-3.5 h-3.5 text-amber-500"></i></div><p class="text-neutral-600 text-sm">"Passport expires in 30 days"</p></div>
+              <div class="alert-card bg-white border border-neutral-200 rounded-lg p-3 flex items-center gap-3 shadow-sm"><div class="w-7 h-7 rounded-md bg-red-50 flex items-center justify-center flex-shrink-0"><i data-lucide="trending-down" class="w-3.5 h-3.5 text-red-500"></i></div><p class="text-neutral-600 text-sm">"Stop-loss triggered on TATAMOTORS"</p></div>
+              <div class="alert-card bg-white border border-neutral-200 rounded-lg p-3 flex items-center gap-3 shadow-sm"><div class="w-7 h-7 rounded-md bg-cyan-50 flex items-center justify-center flex-shrink-0"><i data-lucide="clock" class="w-3.5 h-3.5 text-cyan-500"></i></div><p class="text-neutral-600 text-sm">"Meeting with Rahul in 10 min"</p></div>
+              <div class="alert-card bg-white border border-neutral-200 rounded-lg p-3 flex items-center gap-3 shadow-sm"><div class="w-7 h-7 rounded-md bg-emerald-50 flex items-center justify-center flex-shrink-0"><i data-lucide="sparkles" class="w-3.5 h-3.5 text-emerald-500"></i></div><p class="text-neutral-600 text-sm">"INFY showing bullish breakout"</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 6: CTA -->
+    <div class="slide slide-cta absolute inset-0 flex items-center justify-center px-6 opacity-0 bg-neutral-950">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-4xl md:text-6xl font-bold mb-6 leading-tight text-white">
+          Stop doing<br><span class="gradient-text">admin work</span>.
         </h2>
-      </div>
-
-      <div class="skills-grid grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div class="skill-card bg-neutral-50 border border-neutral-200 rounded-2xl p-6">
-          <div class="flex items-start gap-4">
-            <div class="w-11 h-11 rounded-xl bg-emerald-50 border border-emerald-100 flex items-center justify-center flex-shrink-0"><i data-lucide="phone" class="w-5 h-5 text-emerald-600"></i></div>
-            <div><h3 class="text-base font-semibold text-neutral-900 mb-1">Phone & Voice</h3><p class="text-neutral-500 text-sm leading-relaxed">Takes calls, makes calls on your behalf, rings you with urgent alerts.</p></div>
+        <p class="text-neutral-400 text-lg mb-10 max-w-md mx-auto">
+          Your AI Chief of Staff is live. Start delegating in 30 seconds.
+        </p>
+        <a href="https://general-admin-ruby.vercel.app/onboarding" target="_blank" class="inline-flex items-center gap-3 px-10 py-4 rounded-full bg-white text-neutral-900 font-semibold text-lg hover:bg-neutral-100 transition-all shadow-2xl shadow-white/10">
+          Get Started — Free <i data-lucide="arrow-right" class="w-5 h-5"></i>
+        </a>
+        <p class="text-neutral-600 text-sm mt-6">No credit card required.</p>
+        <div class="mt-20">
+          <div class="inline-flex items-center gap-2 mb-2">
+            <span class="text-lg font-bold gradient-text">क्षेत्र</span>
+            <span class="text-neutral-500 text-sm font-medium">Kshetra</span>
           </div>
-        </div>
-        <div class="skill-card bg-neutral-50 border border-neutral-200 rounded-2xl p-6">
-          <div class="flex items-start gap-4">
-            <div class="w-11 h-11 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center flex-shrink-0"><i data-lucide="mail" class="w-5 h-5 text-blue-600"></i></div>
-            <div><h3 class="text-base font-semibold text-neutral-900 mb-1">Email Management</h3><p class="text-neutral-500 text-sm leading-relaxed">Its own inbox. Reads, categorizes, drafts, and sends on your behalf.</p></div>
-          </div>
-        </div>
-        <div class="skill-card bg-neutral-50 border border-neutral-200 rounded-2xl p-6">
-          <div class="flex items-start gap-4">
-            <div class="w-11 h-11 rounded-xl bg-indigo-50 border border-indigo-100 flex items-center justify-center flex-shrink-0"><i data-lucide="file-text" class="w-5 h-5 text-indigo-600"></i></div>
-            <div><h3 class="text-base font-semibold text-neutral-900 mb-1">Document Intelligence</h3><p class="text-neutral-500 text-sm leading-relaxed">Upload, organize, search, summarize. RAG-powered instant retrieval.</p></div>
-          </div>
-        </div>
-        <div class="skill-card bg-neutral-50 border border-neutral-200 rounded-2xl p-6">
-          <div class="flex items-start gap-4">
-            <div class="w-11 h-11 rounded-xl bg-amber-50 border border-amber-100 flex items-center justify-center flex-shrink-0"><i data-lucide="trending-up" class="w-5 h-5 text-amber-600"></i></div>
-            <div><h3 class="text-base font-semibold text-neutral-900 mb-1">Trading Integration</h3><p class="text-neutral-500 text-sm leading-relaxed">Zerodha, any platform. Define strategies, monitor, get trade alerts.</p></div>
-          </div>
-        </div>
-        <div class="skill-card bg-neutral-50 border border-neutral-200 rounded-2xl p-6">
-          <div class="flex items-start gap-4">
-            <div class="w-11 h-11 rounded-xl bg-purple-50 border border-purple-100 flex items-center justify-center flex-shrink-0"><i data-lucide="presentation" class="w-5 h-5 text-purple-600"></i></div>
-            <div><h3 class="text-base font-semibold text-neutral-900 mb-1">Presentations & Sheets</h3><p class="text-neutral-500 text-sm leading-relaxed">Generate decks, manage spreadsheets, export polished PDFs.</p></div>
-          </div>
-        </div>
-        <div class="skill-card bg-neutral-50 border border-neutral-200 rounded-2xl p-6">
-          <div class="flex items-start gap-4">
-            <div class="w-11 h-11 rounded-xl bg-cyan-50 border border-cyan-100 flex items-center justify-center flex-shrink-0"><i data-lucide="message-circle" class="w-5 h-5 text-cyan-600"></i></div>
-            <div><h3 class="text-base font-semibold text-neutral-900 mb-1">Messaging</h3><p class="text-neutral-500 text-sm leading-relaxed">Telegram, Slack, WhatsApp. Reach your assistant from anywhere.</p></div>
-          </div>
-        </div>
-        <div class="skill-card bg-neutral-50 border border-neutral-200 rounded-2xl p-6">
-          <div class="flex items-start gap-4">
-            <div class="w-11 h-11 rounded-xl bg-orange-50 border border-orange-100 flex items-center justify-center flex-shrink-0"><i data-lucide="bell-ring" class="w-5 h-5 text-orange-600"></i></div>
-            <div><h3 class="text-base font-semibold text-neutral-900 mb-1">Proactive Alerts</h3><p class="text-neutral-500 text-sm leading-relaxed">It tells YOU before you ask — expiring docs, trade signals, meetings.</p></div>
-          </div>
-        </div>
-        <div class="skill-card bg-neutral-50 border border-neutral-200 rounded-2xl p-6">
-          <div class="flex items-start gap-4">
-            <div class="w-11 h-11 rounded-xl bg-teal-50 border border-teal-100 flex items-center justify-center flex-shrink-0"><i data-lucide="calendar" class="w-5 h-5 text-teal-600"></i></div>
-            <div><h3 class="text-base font-semibold text-neutral-900 mb-1">Calendar & Reminders</h3><p class="text-neutral-500 text-sm leading-relaxed">Daily summaries, smart scheduling, never miss a beat.</p></div>
-          </div>
-        </div>
-        <div class="skill-card bg-neutral-50 border border-neutral-200 rounded-2xl p-6">
-          <div class="flex items-start gap-4">
-            <div class="w-11 h-11 rounded-xl bg-sky-50 border border-sky-100 flex items-center justify-center flex-shrink-0"><i data-lucide="globe" class="w-5 h-5 text-sky-600"></i></div>
-            <div><h3 class="text-base font-semibold text-neutral-900 mb-1">Web Research</h3><p class="text-neutral-500 text-sm leading-relaxed">Real-time search. Summarized answers — not 10 blue links.</p></div>
-          </div>
-        </div>
-        <div class="skill-card bg-gradient-to-br from-indigo-50 to-cyan-50 border border-indigo-100 rounded-2xl p-6">
-          <div class="flex items-start gap-4">
-            <div class="w-11 h-11 rounded-xl bg-white border border-indigo-100 flex items-center justify-center flex-shrink-0"><i data-lucide="puzzle" class="w-5 h-5 text-indigo-600"></i></div>
-            <div><h3 class="text-base font-semibold text-neutral-900 mb-1">Extensible via MCP</h3><p class="text-neutral-500 text-sm leading-relaxed">Add any skill through Model Context Protocol. Infinite possibilities.</p></div>
-          </div>
+          <p class="text-neutral-600 text-xs">Built with passion. Powered by AI.</p>
         </div>
       </div>
     </div>
+
+    <!-- Progress bar -->
+    <div class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex gap-1.5">
+      <div class="progress-dot w-2 h-2 rounded-full bg-neutral-900 transition-all"></div>
+      <div class="progress-dot w-2 h-2 rounded-full bg-neutral-300 transition-all"></div>
+      <div class="progress-dot w-2 h-2 rounded-full bg-neutral-300 transition-all"></div>
+      <div class="progress-dot w-2 h-2 rounded-full bg-neutral-300 transition-all"></div>
+      <div class="progress-dot w-2 h-2 rounded-full bg-neutral-300 transition-all"></div>
+      <div class="progress-dot w-2 h-2 rounded-full bg-neutral-300 transition-all"></div>
+    </div>
+
   </div>
 
-  <!-- TWO-WAY -->
-  <div id="two-way" class="px-6 py-20 md:py-28 bg-neutral-50">
-    <div class="max-w-5xl mx-auto">
-      <div class="text-center mb-14">
-        <h2 class="twoway-heading text-4xl md:text-6xl font-bold text-neutral-900 mb-3">
-          It works <span class="gradient-text">both ways</span>.
-        </h2>
-        <p class="text-neutral-500 text-lg">You command it. It alerts you.</p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-        <div>
-          <h3 class="text-xs font-semibold text-indigo-500 uppercase tracking-widest mb-5">You tell it</h3>
-          <div class="cmd-cards space-y-3">
-            <div class="cmd-card bg-white border border-neutral-200 rounded-xl p-4 flex items-center gap-3 shadow-sm">
-              <div class="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center flex-shrink-0"><i data-lucide="plane" class="w-4 h-4 text-blue-500"></i></div>
-              <p class="text-neutral-600 text-sm">"Book a flight to Mumbai for Friday"</p>
-            </div>
-            <div class="cmd-card bg-white border border-neutral-200 rounded-xl p-4 flex items-center gap-3 shadow-sm">
-              <div class="w-8 h-8 rounded-lg bg-emerald-50 flex items-center justify-center flex-shrink-0"><i data-lucide="mail" class="w-4 h-4 text-emerald-500"></i></div>
-              <p class="text-neutral-600 text-sm">"Summarize today's emails"</p>
-            </div>
-            <div class="cmd-card bg-white border border-neutral-200 rounded-xl p-4 flex items-center gap-3 shadow-sm">
-              <div class="w-8 h-8 rounded-lg bg-amber-50 flex items-center justify-center flex-shrink-0"><i data-lucide="trending-up" class="w-4 h-4 text-amber-500"></i></div>
-              <p class="text-neutral-600 text-sm">"Buy 50 shares of RELIANCE"</p>
-            </div>
-            <div class="cmd-card bg-white border border-neutral-200 rounded-xl p-4 flex items-center gap-3 shadow-sm">
-              <div class="w-8 h-8 rounded-lg bg-purple-50 flex items-center justify-center flex-shrink-0"><i data-lucide="phone" class="w-4 h-4 text-purple-500"></i></div>
-              <p class="text-neutral-600 text-sm">"Call Rahul — the order is ready"</p>
-            </div>
-          </div>
-        </div>
-        <div>
-          <h3 class="text-xs font-semibold text-cyan-500 uppercase tracking-widest mb-5">It tells you</h3>
-          <div class="alert-cards space-y-3">
-            <div class="alert-card bg-white border border-neutral-200 rounded-xl p-4 flex items-center gap-3 shadow-sm">
-              <div class="w-8 h-8 rounded-lg bg-amber-50 flex items-center justify-center flex-shrink-0"><i data-lucide="alert-triangle" class="w-4 h-4 text-amber-500"></i></div>
-              <p class="text-neutral-600 text-sm">"Passport expires in 30 days"</p>
-            </div>
-            <div class="alert-card bg-white border border-neutral-200 rounded-xl p-4 flex items-center gap-3 shadow-sm">
-              <div class="w-8 h-8 rounded-lg bg-red-50 flex items-center justify-center flex-shrink-0"><i data-lucide="trending-down" class="w-4 h-4 text-red-500"></i></div>
-              <p class="text-neutral-600 text-sm">"Stop-loss on TATAMOTORS triggered"</p>
-            </div>
-            <div class="alert-card bg-white border border-neutral-200 rounded-xl p-4 flex items-center gap-3 shadow-sm">
-              <div class="w-8 h-8 rounded-lg bg-cyan-50 flex items-center justify-center flex-shrink-0"><i data-lucide="clock" class="w-4 h-4 text-cyan-500"></i></div>
-              <p class="text-neutral-600 text-sm">"Meeting with Rahul in 10 minutes"</p>
-            </div>
-            <div class="alert-card bg-white border border-neutral-200 rounded-xl p-4 flex items-center gap-3 shadow-sm">
-              <div class="w-8 h-8 rounded-lg bg-emerald-50 flex items-center justify-center flex-shrink-0"><i data-lucide="sparkles" class="w-4 h-4 text-emerald-500"></i></div>
-              <p class="text-neutral-600 text-sm">"INFY showing bullish breakout"</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- CTA -->
-  <div id="cta" class="bg-neutral-950 text-white py-32 md:py-40 px-6">
-    <div class="max-w-3xl mx-auto text-center">
-      <h2 class="cta-heading text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-        Stop doing<br><span class="gradient-text">admin work</span>.
-      </h2>
-      <p class="cta-sub text-neutral-400 text-lg mb-10 max-w-md mx-auto">
-        Your AI Chief of Staff is live. Start delegating in 30 seconds.
-      </p>
-      <a href="https://general-admin-ruby.vercel.app/onboarding" target="_blank" class="cta-btn inline-flex items-center gap-3 px-10 py-4 rounded-full bg-white text-neutral-900 font-semibold text-lg hover:bg-neutral-100 transition-all shadow-2xl shadow-white/10">
-        Get Started — Free
-        <i data-lucide="arrow-right" class="w-5 h-5"></i>
-      </a>
-      <p class="text-neutral-600 text-sm mt-6">No credit card required.</p>
-    </div>
-    <div class="mt-32 text-center">
-      <div class="inline-flex items-center gap-2 mb-3">
-        <span class="text-lg font-bold gradient-text">क्षेत्र</span>
-        <span class="text-neutral-500 text-sm font-medium">Kshetra</span>
-      </div>
-      <p class="text-neutral-600 text-xs">Built with passion. Powered by AI.</p>
-    </div>
-  </div>
+  <!-- Scroll spacer — this is what the user actually scrolls through -->
+  <div id="scroll-spacer" class="h-[600vh]"></div>
 
   <script src="script.js"></script>
 </body>

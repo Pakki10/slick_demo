@@ -1,0 +1,78 @@
+/* ═══════════════════════════════════════════
+   KSHETRA — CONTINUOUS FLOWING SCROLL
+   ═══════════════════════════════════════════ */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: #fff;
+  color: #171717;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+::selection { background: rgba(99, 102, 241, 0.15); }
+
+/* ─── Gradient text ─── */
+.gradient-text {
+  background: linear-gradient(135deg, #6366f1, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Nav ─── */
+nav {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.nav-btn { background: #171717; color: #fff; transition: background 0.2s; }
+.nav-btn:hover { background: #333; }
+
+/* ─── Hero ─── */
+.hero-bg {
+  position: absolute; inset: 0; pointer-events: none;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(99,102,241,0.06), transparent),
+    radial-gradient(ellipse 60% 40% at 80% 80%, rgba(6,182,212,0.04), transparent);
+}
+
+.hero-word { display: inline-block; }
+
+/* ─── Skill card hover ─── */
+.skill-card { cursor: default; transition: box-shadow 0.3s, transform 0.3s; }
+.skill-card:hover { box-shadow: 0 12px 40px rgba(0,0,0,0.08); transform: translateY(-4px); }
+
+/* ─── Cmd/alert card hover ─── */
+.cmd-card, .alert-card { transition: box-shadow 0.3s, border-color 0.3s, transform 0.3s; }
+.cmd-card:hover, .alert-card:hover {
+  border-color: rgba(99,102,241,0.3);
+  box-shadow: 0 6px 24px rgba(99,102,241,0.08);
+  transform: translateY(-2px);
+}
+
+/* ─── CTA shimmer ─── */
+.cta-btn { position: relative; overflow: hidden; }
+.cta-btn::after {
+  content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(99,102,241,0.15), transparent);
+  animation: shimmer 3s ease-in-out infinite;
+}
+@keyframes shimmer { 0% { left: -100%; } 100% { left: 200%; } }
+
+/* ─── Mobile ─── */
+@media (max-width: 767px) {
+  .hero-heading { font-size: clamp(2rem, 10vw, 3.5rem) !important; margin-bottom: 1.5rem; }
+  .hero-sub { font-size: 1rem; margin-bottom: 2rem; }
+  #skills, #two-way, #demo, #problem { padding-left: 1rem; padding-right: 1rem; }
+  .skills-heading, .twoway-heading { font-size: 2rem !important; }
+  .cta-heading { font-size: 2rem !important; }
+  .cta-btn { font-size: 1rem !important; padding: 0.875rem 2rem !important; }
+  nav { padding: 0.75rem 1rem; }
+}
